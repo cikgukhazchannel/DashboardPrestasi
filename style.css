@@ -1,0 +1,47 @@
+<style>
+    body { font-family: 'Poppins', sans-serif; }
+    .card { border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+    .login-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=2070') center center/cover; }
+    .login-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border-radius: 1.5rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3); padding: 2.5rem; width: 100%; max-width: 28rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
+    .notification { position: fixed; bottom: 1rem; right: 1rem; z-index: 50; animation: slideIn 0.5s forwards, fadeOut 0.5s 4.5s forwards; }
+    @keyframes slideIn { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+    .hidden { display: none; }
+
+    /* === GAYA YANG DIKEMAS KINI UNTUK LENCANA BERWARNA-WARNI & BERCAHAYA === */
+    .badge {
+        transition: all 0.3s ease;
+        cursor: default;
+    }
+
+    /* KESAN CAHAYA KEKAL (BASE GLOW) UNTUK SETIAP WARNA */
+    .badge-glow-yellow { box-shadow: 0 0 12px rgba(234, 179, 8, 0.6); }
+    .badge-glow-blue   { box-shadow: 0 0 12px rgba(59, 130, 246, 0.6); }
+    .badge-glow-green  { box-shadow: 0 0 12px rgba(34, 197, 94, 0.6); }
+    .badge-glow-purple { box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
+    .badge-glow-orange { box-shadow: 0 0 12px rgba(249, 115, 22, 0.6); }
+
+    /* KESAN CAHAYA LEBIH KUAT SEMASA HOVER */
+    .badge-glow-yellow:hover { box-shadow: 0 0 25px rgba(234, 179, 8, 0.9); transform: scale(1.05); }
+    .badge-glow-blue:hover   { box-shadow: 0 0 25px rgba(59, 130, 246, 0.9); transform: scale(1.05); }
+    .badge-glow-green:hover  { box-shadow: 0 0 25px rgba(34, 197, 94, 0.9); transform: scale(1.05); }
+    .badge-glow-purple:hover { box-shadow: 0 0 25px rgba(168, 85, 247, 0.9); transform: scale(1.05); }
+    .badge-glow-orange:hover { box-shadow: 0 0 25px rgba(249, 115, 22, 0.9); transform: scale(1.05); }
+    
+    /* GAYA UNTUK LENCANA YANG TERKUNCI (KELABU) */
+    .badge-locked {
+        background-color: #f3f4f6; /* bg-gray-100 */
+        border-color: #e5e7eb; /* border-gray-200 */
+        cursor: help;
+    }
+    .badge-locked .badge-icon, .badge-locked .badge-name {
+        filter: grayscale(100%);
+        color: #9ca3af; /* text-gray-400 */
+        opacity: 0.6;
+    }
+    
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+    .accordion-content.open { max-height: 500px; }
+    .task-item input:checked + label { text-decoration: line-through; color: #9ca3af; }
+</style>
